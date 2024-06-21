@@ -67,7 +67,7 @@ const Inicio = () => {
           <Row>
             <Col md={4}>
               <div className="peliculas">
-                <a href="https://rolling-bistro.netlify.app/" target="_blank">
+                <div className="cardProyecto">
                   <div className="pelicula">
                     <img
                       className="imgTendencia"
@@ -83,7 +83,7 @@ const Inicio = () => {
                       </div>
                     </div>
                   </div>
-                </a>
+                </div>
               </div>
             </Col>
             <Col></Col>

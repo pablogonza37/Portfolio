@@ -287,7 +287,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap:60px;
-  a{
+  .cardProyecto{
       text-decoration: none;
       color: #ffffff;
       .pelicula{
