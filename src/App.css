@@ -211,9 +211,35 @@
 }
 
 
-.proyectos{
+.proyectos, .habilidades{
   height: auto;
   background-color: #191a23 ;
+}
+
+.skill {
+  width: 100px;
+  height: 100px;
+  background: #212121;
+  box-shadow: rgba(0, 0, 0, 0.4) 10px 20px 30px, rgba(0, 0, 0, 0.3) 10px 1px 53px 3px, rgba(1, 0, 0, 0.2) 0px -1px 3px inset;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-weight: bolder;
+  color: #fff;
+  padding: 10px;
+  margin: 30px;
+}
+
+.skill:hover {
+  transform: scale(1.021);
+}
+
+.skill:active {
+  transform: scale(0.95) rotateZ(1.1deg);
 }
 
 .contacto{
@@ -287,11 +313,12 @@
   justify-content: center;
   flex-wrap: wrap;
   gap:60px;
+  margin-bottom: 20px;
   .cardProyecto{
       text-decoration: none;
       color: #ffffff;
       .pelicula{
-          width:350px;
+          width:100%;
           height: 250px;
           position: relative;
           overflow: hidden;
@@ -325,7 +352,7 @@
           }
           &:hover{
              box-shadow: 0 0 30px #000000cd;
-             transform: scale(1.1);
+             transform: scale(1.05);
             
           }
           &:hover .menuProyecto {
@@ -340,7 +367,7 @@
               width: 100%;
               height: 100%;
               border-radius: 10px;
-              background-image: linear-gradient(-45deg, #050505bd 0%, #ff0f7b80 100% ); /* Color rojo transparente */
+              background-image: linear-gradient(-45deg, #050505bd 0%, #0e0b0cd3 100% ); /* Color rojo transparente */
               z-index: 1; /* Para asegurarse de que esté sobre la imagen */
               transition: transform 0.5s ease;
           }
@@ -558,4 +585,86 @@
 
 
 
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 15px #00000027;
+  padding: 15px 10px;
+  border-radius: 5em;
+}
+
+.social-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px #00000027;
+  transition: 0.3s;
+}
+
+.social-button:hover {
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 6px 3px #00000027;
+}
+
+.social-buttons svg {
+  transition: 0.3s;
+  height: 20px;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.facebook svg {
+  fill: #f2f2f2;
+}
+
+.facebook:hover svg {
+  fill: #3b5998;
+}
+
+.github {
+  background-color: #333;
+}
+
+.github svg {
+  width: 25px;
+  height: 25px;
+  fill: #f2f2f2;
+}
+
+.github:hover svg {
+  fill: #333;
+}
+
+.linkedin {
+  background-color: #0077b5;
+}
+
+.linkedin svg {
+  fill: #f2f2f2;
+}
+
+.linkedin:hover svg {
+  fill: #0077b5;
+}
+
+.instagram {
+  background-color: #c13584;
+}
+
+.instagram svg {
+  fill: #f2f2f2;
+}
+
+.instagram:hover svg {
+  fill: #c13584;
+}
 
