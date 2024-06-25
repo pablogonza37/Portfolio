@@ -10,15 +10,24 @@ import Resetas from "../../../assets/resetas.png";
 import Parrillada from "../../../assets/parrillada.png";
 import Simpsons from "../../../assets/simpsons.png";
 import Agenda from "../../../assets/agenda.png";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 
 const Proyects = () => {
+
+  useEffect(()=>{
+    AOS.init();
+  }, []);
+
   return (
-    <section className="proyectos">
+    <section className="proyectos" data-aos="zoom-in">
       <h2 className="text-white display-5 my-3 text-center mb-5">PROYECTOS</h2>
       <Container>
         <Row>
-          <Col md={6} lg={4} className="peliculas">
-            <div className="cardProyecto">
+          <Col md={6} lg={4} className="peliculas" >
+            <div className="cardProyecto" >
               <div className="pelicula">
                 <img
                   className="imgTendencia"

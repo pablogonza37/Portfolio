@@ -4,10 +4,11 @@ import Skills from "./componentsInicio/Skills";
 import Contact from "./componentsInicio/Contact";
 
 const Inicio = () => {
+  
   return (
     <>
       <Banner></Banner>
-      <Proyects></Proyects>
+      <Proyects ></Proyects>
       <Skills></Skills>
       <Contact></Contact>
     </>

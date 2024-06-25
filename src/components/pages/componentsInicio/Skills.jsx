@@ -2,7 +2,7 @@ import { Col, Row } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Html from '../../../assets/html.png';
 import Css from '../../../assets/css.png';
-import Bootstrap from '../../../assets/bootstrap.jfif';
+import Bootstrap from '../../../assets/bootstrap.png';
 import Vue from '../../../assets/vue.png';
 import React from '../../../assets/react.png';
 import Node from '../../../assets/nodejs.png';
@@ -13,11 +13,18 @@ import C from '../../../assets/c.webp';
 import Cpp from '../../../assets/c++.png';
 import Python from '../../../assets/python.webp';
 import Mysql from '../../../assets/mysql.webp';
-import Ruby from '../../../assets/ruby1.webp';
+import Ruby from '../../../assets/ruby.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const Skills = () => {
+  useEffect(()=>{
+    AOS.init();
+  }, []);
+
   return (
-    <section className="habilidades py-3">
+    <section className="habilidades py-3" data-aos="zoom-in">
       <Container>
         <h2 className="text-white display-3 d-flex justify-content-center">
           Habilidades
@@ -34,9 +41,9 @@ const Skills = () => {
               <img
                 src={Html}
                 alt=""
-                className="w-100"
+                className="w-100 "
               />
-            </div>
+            </div>      
           </Col>
           <Col
             lg={2}

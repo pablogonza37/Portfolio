@@ -1,7 +1,19 @@
 import {Container, Row, Col} from "react-bootstrap";
 import Perfil from '../../../assets/perfil.png';
+import React, { useState, useEffect } from 'react';
 
 const Banner = () => {
+  const [showFullStack, setShowFullStack] = useState(false);
+
+  useEffect(() => {
+    // Simular el efecto de escribir "FULL STACK" después de un breve retraso
+    const timeout = setTimeout(() => {
+      setShowFullStack(true);
+    }, 2000); // Cambiar este valor según el retraso deseado
+
+    return () => clearTimeout(timeout);
+  }, []); // Se ejecuta solo una vez al montar el componente
+
     return (
         <section className="banner">
         <Container>
@@ -29,15 +41,18 @@ const Banner = () => {
               <div className="info px-4 py-2 m-auto">
                 <p className="text-white mb-1">Bienvenidos a mi portfolio</p>
                 <hr className="text-white my-1" />
+                
                 <h1 className="display-4 text-white bold">
-                  DESARROLLADOR FULL STACK
-                </h1>
+      <span id="primerTexto">DESARROLLADOR</span>{' '}
+      {showFullStack && <span id="segundoTexto">FULL STACK</span>}
+    </h1>
                 <p className="text-white">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Reiciendis quis suscipit error vero explicabo debitis facilis
                   culpa magni architecto corporis unde rerum, consequatur
                   quibusdam? Minus, aperiam pariatur. Illo, inventore assumenda!
                 </p>
+                
                 <div className="text-end me-3">
                   <button className="button">
                     <span className="button_lg">
@@ -49,6 +64,8 @@ const Banner = () => {
               </div>
             </Col>
           </Row>
+          <div className="text-white text-center mt-3 d-flex flex-column parpadea text" >
+            <i className="bi bi-chevron-compact-down"></i></div>
         </Container>
       </section>
     );
