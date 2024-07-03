@@ -8,6 +8,18 @@
   background: #0f1923;
 }
 
+#collapsible-nav-dropdown {
+  color: white;
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: #fff;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
 /* banner */
 
 .banner{
@@ -20,7 +32,7 @@
  background-size: cover;
  background-size: cover;
  height: auto;
- padding-bottom: 50px;
+ padding-bottom: 30px;
 }
 
 .perfil{
@@ -376,6 +388,36 @@
 
 }
 
+
+.btnFiltro {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.btnFiltro:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.btnFiltro:active {
+  transform: translateY(-1px);
+}
+
 /* contacto */
 
 .contacto{
@@ -620,58 +662,136 @@ h1 {
   font-style: normal;
 }
 
-#primerTexto,
-#segundoTexto {
-  display: inline-block;
+
+
+/* modal */
+
+.modal-content{
+  background: black;
+  color: white;
+}
+
+
+/* cert */
+.certificados{
+  height: auto;
+  background: whitesmoke;
+}
+
+.cardCert {
+  width: 200px;
+  height: 130px;
+  background-size: cover;
+  position: relative;
+  display: grid;
+  place-content: center;
+  border-radius: 10px;
   overflow: hidden;
-  white-space: nowrap;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
 }
 
-#primerTexto {
-  width: 0;
-  animation: typing 2s steps(20) 1s 1 normal both;
-}
-
-#segundoTexto {
-  width: 0;
-  border-right: 0.10em solid #ffffff;
-  animation: typing2 2s steps(20) 1s forwards, blink 1s steps(1) infinite 3s;
-}
-
-.hide {
-  visibility: hidden;
+.borderCert {
+  position: absolute;
+  inset: 0px;
+  border: 1px solid #000000;
   opacity: 0;
+  transform: rotate(10deg);
+  transition: all 0.5s ease-in-out;
 }
 
-.show {
-  visibility: visible;
+ 
+.content {
+  transition: all 0.5s ease-in-out;
+}
+
+.bottom-text {
+  position: absolute;
+  left: 50%;
+  bottom: 13px;
+  transform: translateX(-50%);
+  font-size: 6px;
+  text-transform: uppercase;
+  padding: 0px 5px 0px 8px;
+  color: #bd9f67;
+  background: #243137;
+  opacity: 0;
+  letter-spacing: 7px;
+  transition: all 0.5s ease-in-out;
+}
+
+.content .logo-bottom-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 30px;
+  color: #bd9f67;
+  padding-left: 8px;
+  font-size: 11px;
+  opacity: 0;
+  letter-spacing: none;
+  transition: all 0.5s ease-in-out 0.5s;
+}
+
+.cardCert:hover .bottom-text {
+  letter-spacing: 3px;
   opacity: 1;
+  transform: translateX(-50%);
 }
 
-@keyframes typing {
-  from {
-    width: 0;
+.cardCert:hover {
+  border-radius: 0;
+  transform: scale(1.1);
+}
+
+.cardCert:hover .logo {
+  width: 134px;
+  animation: opacity 1s ease-in-out;
+}
+
+.cardCert:hover .borderCert {
+  inset: 15px;
+  opacity: 1;
+  transform: rotate(0);
+}
+
+.cardCert:hover .bottom-text {
+  letter-spacing: 3px;
+  opacity: 1;
+  transform: translateX(-50%);
+}
+
+.cardCert:hover .content .logo-bottom-text {
+  opacity: 1;
+  letter-spacing: 9.5px;
+}
+
+.cardCert:hover .trail {
+  animation: trail 1s ease-in-out;
+}
+
+@keyframes opacity {
+  0% {
+    border-right: 1px solid transparent;
   }
-  to {
-    width: 100%;
+
+  10% {
+    border-right: 1px solid #000000;
+  }
+
+  80% {
+    border-right: 1px solid #000000;
+  }
+
+  100% {
+    border-right: 1px solid black;
   }
 }
 
-@keyframes typing2 {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+.imgTitulo{
+  width: 38px;
+  margin: 0 10px 10px 0;
+
 }
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
-
-
 

@@ -1,33 +1,47 @@
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { Container, Row, Col, Button, Modal } from "react-bootstrap";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Bistro from "../../../assets/bistro.png";
-import ListaTareas from "../../../assets/listaTareas.png";
-import Coffee from "../../../assets/coffee.png";
-import Paleta from "../../../assets/paleta.png";
-import Clima from "../../../assets/clima.png";
-import Noticias from "../../../assets/noticias.png";
-import Peliculas from "../../../assets/peliculas.png";
-import Resetas from "../../../assets/resetas.png";
-import Parrillada from "../../../assets/parrillada.png";
-import Simpsons from "../../../assets/simpsons.png";
-import Agenda from "../../../assets/agenda.png";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { useEffect } from "react";
-
+import IconoProyecto from "../../../assets/proyecto.png";
 
 const Proyects = () => {
+  const [showModal, setShowModal] = useState(false);
 
-  useEffect(()=>{
+  useEffect(() => {
     AOS.init();
   }, []);
 
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
-    <section className="proyectos" data-aos="zoom-in">
-      <h2 className="text-white display-5 my-3 text-center mb-5">PROYECTOS</h2>
+    <section className="proyectos" >
       <Container>
-        <Row>
-          <Col md={6} lg={4} className="peliculas" >
-            <div className="cardProyecto" >
+        
+        <h2 className="text-white display-5 mt-3 tituloProyectos" data-aos="zoom-in">
+          <img className="imgTitulo" src={IconoProyecto} alt="" />
+          PROYECTOS
+        </h2>
+        <hr className="text-white" />
+        <div>
+        <button className="btnFiltro"> Todos
+        </button>
+        <button className="btnFiltro"> Full stack
+        </button>
+        <button className="btnFiltro"> Frontend
+        </button>
+        <button className="btnFiltro"> Backend
+        </button>
+        </div>
+        <Row className="mt-5">
+          <Col md={6} lg={4} className="peliculas">
+            <div className="cardProyecto">
               <div className="pelicula">
                 <img
                   className="imgTendencia"
@@ -36,243 +50,29 @@ const Proyects = () => {
                   loading="lazy"
                 />
 
-                <div className="tituloPelicula ">
+                <div className="tituloPelicula">
                   <div className="menuProyecto d-flex justify-content-center">
-                    <Button variant="primary">
+                    <Button
+                      variant="primary"
+                      href="https://github.com/pablogonza37/ProyectoFinalRollingCode"
+                      target="_blank"
+                    >
                       <i className="bi bi-github"></i>
                     </Button>
-                    <Button variant="dark" className="ms-2">
-                      <i className="bi bi-box-arrow-up-right"></i>
+                    <Button
+                      variant="dark"
+                      className="ms-2"
+                      href="https://rolling-bistro.netlify.app/"
+                      target="_blank"
+                    >
+                      <i className="bi bi-rocket-takeoff"></i>
                     </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
-          <Col md={6} lg={4} className="peliculas">
-            <div className="cardProyecto">
-              <div className="pelicula">
-                <img
-                  className="imgTendencia"
-                  src={ListaTareas}
-                  alt=""
-                  loading="lazy"
-                />
-
-                <div className="tituloPelicula ">
-                  <div className="menuProyecto d-flex justify-content-center">
-                    <Button variant="primary">
-                      <i className="bi bi-github"></i>
-                    </Button>
-                    <Button variant="dark" className="ms-2">
-                      <i className="bi bi-box-arrow-up-right"></i>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
-          <Col md={6} lg={4} className="peliculas">
-            <div className="cardProyecto">
-              <div className="pelicula">
-                <img
-                  className="imgTendencia"
-                  src={Coffee}
-                  alt=""
-                  loading="lazy"
-                />
-
-                <div className="tituloPelicula ">
-                  <div className="menuProyecto d-flex justify-content-center">
-                    <Button variant="primary">
-                      <i className="bi bi-github"></i>
-                    </Button>
-                    <Button variant="dark" className="ms-2">
-                      <i className="bi bi-box-arrow-up-right"></i>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
-          <Col md={6} lg={4} className="peliculas">
-            <div className="cardProyecto">
-              <div className="pelicula">
-                <img
-                  className="imgTendencia"
-                  src={Paleta}
-                  alt=""
-                  loading="lazy"
-                />
-
-                <div className="tituloPelicula ">
-                  <div className="menuProyecto d-flex justify-content-center">
-                    <Button variant="primary">
-                      <i className="bi bi-github"></i>
-                    </Button>
-                    <Button variant="dark" className="ms-2">
-                      <i className="bi bi-box-arrow-up-right"></i>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
-          <Col md={6} lg={4} className="peliculas">
-            <div className="cardProyecto">
-              <div className="pelicula">
-                <img
-                  className="imgTendencia"
-                  src={Clima}
-                  alt=""
-                  loading="lazy"
-                />
-
-                <div className="tituloPelicula ">
-                  <div className="menuProyecto d-flex justify-content-center">
-                    <Button variant="primary">
-                      <i className="bi bi-github"></i>
-                    </Button>
-                    <Button variant="dark" className="ms-2">
-                      <i className="bi bi-box-arrow-up-right"></i>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
-          <Col md={6} lg={4} className="peliculas">
-            <div className="cardProyecto">
-              <div className="pelicula">
-                <img
-                  className="imgTendencia"
-                  src={Noticias}
-                  alt=""
-                  loading="lazy"
-                />
-
-                <div className="tituloPelicula ">
-                  <div className="menuProyecto d-flex justify-content-center">
-                    <Button variant="primary">
-                      <i className="bi bi-github"></i>
-                    </Button>
-                    <Button variant="dark" className="ms-2">
-                      <i className="bi bi-box-arrow-up-right"></i>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
-          <Col md={6} lg={4} className="peliculas">
-            <div className="cardProyecto">
-              <div className="pelicula">
-                <img
-                  className="imgTendencia"
-                  src={Peliculas}
-                  alt=""
-                  loading="lazy"
-                />
-
-                <div className="tituloPelicula ">
-                  <div className="menuProyecto d-flex justify-content-center">
-                    <Button variant="primary">
-                      <i className="bi bi-github"></i>
-                    </Button>
-                    <Button variant="dark" className="ms-2">
-                      <i className="bi bi-box-arrow-up-right"></i>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
-          <Col md={6} lg={4} className="peliculas">
-            <div className="cardProyecto">
-              <div className="pelicula">
-                <img
-                  className="imgTendencia"
-                  src={Resetas}
-                  alt=""
-                  loading="lazy"
-                />
-
-                <div className="tituloPelicula ">
-                  <div className="menuProyecto d-flex justify-content-center">
-                    <Button variant="primary">
-                      <i className="bi bi-github"></i>
-                    </Button>
-                    <Button variant="dark" className="ms-2">
-                      <i className="bi bi-box-arrow-up-right"></i>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
-          <Col md={6} lg={4} className="peliculas">
-            <div className="cardProyecto">
-              <div className="pelicula">
-                <img
-                  className="imgTendencia"
-                  src={Parrillada}
-                  alt=""
-                  loading="lazy"
-                />
-
-                <div className="tituloPelicula ">
-                  <div className="menuProyecto d-flex justify-content-center">
-                    <Button variant="primary">
-                      <i className="bi bi-github"></i>
-                    </Button>
-                    <Button variant="dark" className="ms-2">
-                      <i className="bi bi-box-arrow-up-right"></i>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
-          <Col md={6} lg={4} className="peliculas">
-            <div className="cardProyecto">
-              <div className="pelicula">
-                <img
-                  className="imgTendencia"
-                  src={Simpsons}
-                  alt=""
-                  loading="lazy"
-                />
-
-                <div className="tituloPelicula ">
-                  <div className="menuProyecto d-flex justify-content-center">
-                    <Button variant="primary">
-                      <i className="bi bi-github"></i>
-                    </Button>
-                    <Button variant="dark" className="ms-2">
-                      <i className="bi bi-box-arrow-up-right"></i>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
-          <Col md={6} lg={4} className="peliculas">
-            <div className="cardProyecto">
-              <div className="pelicula">
-                <img
-                  className="imgTendencia"
-                  src={Agenda}
-                  alt=""
-                  loading="lazy"
-                />
-
-                <div className="tituloPelicula ">
-                  <div className="menuProyecto d-flex justify-content-center">
-                    <Button variant="primary">
-                      <i className="bi bi-github"></i>
-                    </Button>
-                    <Button variant="dark" className="ms-2">
-                      <i className="bi bi-box-arrow-up-right"></i>
+                    <Button
+                      variant="success"
+                      className="ms-2"
+                      onClick={openModal}
+                    >
+                      <i className="bi bi-info-circle"></i>
                     </Button>
                   </div>
                 </div>
@@ -281,6 +81,21 @@ const Proyects = () => {
           </Col>
         </Row>
       </Container>
+
+      <Modal show={showModal} onHide={closeModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Detalles del Proyecto</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {/* Aquí puedes agregar cualquier detalle adicional del proyecto */}
+          Detalles del proyecto aquí...
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={closeModal}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </section>
   );
 };

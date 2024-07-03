@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Html from '../../../assets/html.png';
 import Css from '../../../assets/css.png';
 import Bootstrap from '../../../assets/bootstrap.png';
-import Vue from '../../../assets/vue.png';
+import Git from '../../../assets/git.png';
 import React from '../../../assets/react.png';
 import Node from '../../../assets/nodejs.png';
 import Express from '../../../assets/express.png';
@@ -14,7 +14,9 @@ import Cpp from '../../../assets/c++.png';
 import Python from '../../../assets/python.webp';
 import Mysql from '../../../assets/mysql.webp';
 import Ruby from '../../../assets/ruby.png';
+import Github from '../../../assets/github.png';
 import AOS from 'aos';
+import IconoSkills from "../../../assets/skills.png";
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
 
@@ -26,9 +28,10 @@ const Skills = () => {
   return (
     <section className="habilidades py-3" data-aos="zoom-in">
       <Container>
-        <h2 className="text-white display-3 d-flex justify-content-center">
+        <h2 className="text-white display-3"><img className="imgTitulo img-fluid" src={IconoSkills} alt="" />
           Habilidades
         </h2>
+        <hr className="text-white" />
         <Row className="d-flex">
           <Col
             lg={2}
@@ -90,21 +93,7 @@ const Skills = () => {
               />
             </div>
           </Col>
-          <Col
-            lg={2}
-            md={3}
-            sm={6}
-            xs={6}
-            className="d-flex justify-content-center"
-          >
-            <div className="skill">
-              <img
-                src={Vue}
-                alt=""
-                className="w-100"
-              />
-            </div>
-          </Col>        
+                  
           <Col
             lg={2}
             md={3}
@@ -250,6 +239,36 @@ const Skills = () => {
             <div className="skill">
               <img
                 src={Ruby}
+                alt=""
+                className="w-100"
+              />
+            </div>
+          </Col>
+          <Col
+            lg={2}
+            md={3}
+            sm={6}
+            xs={6}
+            className="d-flex justify-content-center"
+          >
+            <div className="skill">
+              <img
+                src={Git}
+                alt=""
+                className="w-100"
+              />
+            </div>
+          </Col>
+          <Col
+            lg={2}
+            md={3}
+            sm={6}
+            xs={6}
+            className="d-flex justify-content-center"
+          >
+            <div className="skill">
+              <img
+                src={Github}
                 alt=""
                 className="w-100"
               />

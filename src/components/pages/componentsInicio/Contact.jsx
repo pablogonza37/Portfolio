@@ -1,10 +1,40 @@
 import {Container, Row, Col} from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
 import AOS from 'aos';
+import IconoContacto from "../../../assets/contacto.png";
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
+import { useForm } from 'react-hook-form';
+import Swal from "sweetalert2";
 
 const Contact = () => {
+
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+
+  const onSubmit = (data) => {
+    try {
+     // const response = await axios.post('http://localhost:3001/send-email', data);
+      
+      
+      Swal.fire({
+        position: "top-center",
+        icon: "success",
+        title: "¡Consulta enviada!",
+        text: "Gracias por contactarnos. Te responderemos pronto.",
+      });
+
+      reset(); 
+      console.log(response.data); 
+    } catch (error) {
+      console.error('Error al enviar el formulario:', error);
+
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Hubo un problema al enviar tu consulta. Por favor intenta nuevamente más tarde.",
+      });
+    }
+  };
 
   useEffect(()=>{
     AOS.init();
@@ -13,23 +43,47 @@ const Contact = () => {
   return (
     <section className="contacto">
       <Container>
-        <h2 className="text-white display-3 d-flex justify-content-center" data-aos="zoom-in">
+        <h2 className="text-white display-3 mt-3" data-aos="zoom-in"><img src={IconoContacto} className="imgTitulo" alt="" />
           Contacto
         </h2>
+        <hr className="text-white" />
         <Row className="d-flex justify-content-center my-5">
           <Col className="d-flex justify-content-center">
         <div class="form-container"  data-aos="zoom-in-right">
-      <form class="form">
-        <div class="form-group">
-          <label for="email">Company Email</label>
-          <input type="text" id="email" name="email" required=""/>
-        </div>
-        <div class="form-group">
-          <label for="textarea">How Can We Help You?</label>
-          <textarea name="textarea" id="textarea" rows="10" cols="50" required="">          </textarea>
-        </div>
-        <button class="form-submit-btn" type="submit">Submit</button>
-      </form>
+        <form className="form" onSubmit={handleSubmit(onSubmit)}>
+      <div className="form-group">
+        <label htmlFor="name">Nombre</label>
+        <input
+          type="text"
+          id="name"
+          {...register('name', { required: true })}
+        />
+        {errors.name && <span>Este campo es requerido.</span>}
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="email">Email</label>
+        <input
+          type="text"
+          id="email"
+          {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
+        />
+        {errors.email && <span>Por favor ingresa un correo válido.</span>}
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="textarea">¿En qué puedo ayudarte?</label>
+        <textarea
+          id="textarea"
+          rows="10"
+          cols="50"
+          {...register('message', { required: true })}
+        />
+        {errors.message && <span>Este campo es requerido.</span>}
+      </div>
+
+      <button type="submit" className="form-submit-btn">Enviar</button>
+    </form>
     </div>
 
     </Col>
