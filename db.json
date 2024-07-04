@@ -1,0 +1,22 @@
+{
+  "proyectos": [
+    {
+      "id": 1,
+      "titulo": "Bistro",
+      "github": "https://github.com/pablogonza37/ProyectoFinalRollingCode",
+      "deploy": "https://rolling-bistro.netlify.app/",
+      "imagen": "https://images.pexels.com/photos/1640771/pexels-photo-1640771.jpeg",
+      "tecnologias": "Html, Css, JavaScript",
+      "tipo": "fullstack"
+    },
+    {
+      "id": 2,
+      "titulo": "Lista de tareas",
+      "github": "https://github.com/pablogonza37/ProyectoFinalRollingCode",
+      "deploy": "https://rolling-bistro.netlify.app/",
+      "imagen": "https://images.pexels.com/photos/5737454/pexels-photo-5737454.jpeg",
+      "tecnologias": "Html, Css, JavaScript",
+      "tipo": "frontend"
+    }
+  ]
+}
