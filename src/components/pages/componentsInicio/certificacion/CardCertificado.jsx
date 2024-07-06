@@ -1,25 +1,31 @@
-import { Container, Row, Col, Button, Modal } from "react-bootstrap";
+import React from "react";
+import { Col } from "react-bootstrap";
 
-const CardCertificado = () => {
+const CardCertificado = ({ certificado, obtenerIdCertificado }) => {
   return (
-    <Col md={4}>
+    <Col md={12} lg={6} className="d-flex mb-4">
       <a
-        className="cardCert"
+        className="cardCert d-flex"
         style={{
-          backgroundImage:
-            'url("https://certs.rollingcodeschool.com//cGFiLmdvbnphbGV6Mzc5OEBnbWFpbC5jb20=-1714682133518-1.png")',
+          backgroundImage: `url(${certificado.imagen})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          padding: "5px",
+          display: "block",
+        }}
+        onClick={() => {
+          obtenerIdCertificado(certificado._id);
         }}
       >
-        <div class="borderCert"></div>
-        <div class="content"></div>
-        <span class="bottom-text">RollingCode school</span>
+        <div className="borderCert"></div>
+        <div className="content">
+          <span className="bottom-text">{certificado.titulo}</span>
+        </div>
       </a>
-      <div className=" mt-2">
-        <h3>rolling code</h3>
+      <div className="mt-2 text-white ms-4">
+        <h5>{certificado.titulo}</h5>
         <p>
-          kdmkmklsmcklmds <br /> kdsjncdsjkncs
+          {certificado.institucion} <br /> {certificado.expedicion}
         </p>
       </div>
     </Col>

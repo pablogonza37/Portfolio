@@ -9,7 +9,7 @@ const Inicio = () => {
   return (
     <>
       <Banner></Banner>
-      <Proyects ></Proyects>
+     <Proyects ></Proyects>
       <Skills></Skills>
       <Certificados></Certificados>
       <Contact></Contact>

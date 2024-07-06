@@ -15,7 +15,7 @@ const Proyects = () => {
   const [spinnerInicio, setSpinnerInicio] = useState(true);
   const [show, setShow] = useState(false);
   const [proyectoModal, setProyectoModal] = useState("");
-  const [filtro, setFiltro] = useState("Todos"); // State for filter
+  const [filtro, setFiltro] = useState("Todos");
 
   const handleClose = () => setShow(false);
 
@@ -59,12 +59,16 @@ const Proyects = () => {
     setFiltro(tipo);
   };
 
-  const proyectosFiltrados = filtro === "Todos" ? proyectos : filtrarProyectos(filtro);
+  const proyectosFiltrados =
+    filtro === "Todos" ? proyectos : filtrarProyectos(filtro);
 
   return (
     <section className="proyectos">
       <Container>
-        <h2 className="text-white display-5 mt-3 tituloProyectos" data-aos="zoom-in">
+        <h2
+          className=" anton-sc-regular mt-3 tituloProyectos"
+          data-aos="zoom-in"
+        >
           <img className="imgTitulo" src={IconoProyecto} alt="" />
           PROYECTOS
         </h2>
@@ -79,7 +83,9 @@ const Proyects = () => {
           </Button>
           <Button
             className={`btnFiltro ${filtro === "Full stack" ? "active" : ""}`}
-            style={filtro === "Full stack" ? { backgroundColor: "#23c483" } : {}}
+            style={
+              filtro === "Full stack" ? { backgroundColor: "#23c483" } : {}
+            }
             onClick={() => handleFiltroClick("Full stack")}
           >
             Full stack
@@ -101,13 +107,13 @@ const Proyects = () => {
         </div>
         {spinnerInicio ? (
           <div className="my-4 text-center">
-            <Spinner animation="border" variant="dark" />
+            <Spinner animation="border" variant="ligth" />
           </div>
         ) : (
           <Row className="mt-5">
             {proyectosFiltrados.map((proyecto) => (
               <CardProyecto
-                key={proyecto.id}
+                key={proyecto._id}
                 proyecto={proyecto}
                 obtenerIdProyecto={obtenerIdProyecto}
               ></CardProyecto>
@@ -117,11 +123,15 @@ const Proyects = () => {
       </Container>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{proyectoModal.titulo}</Modal.Title>
+          <Modal.Title>{proyectoModal.nombreProyecto}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img className="img-fluid imgModal" src={proyectoModal.imagen} alt="" />
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos animi consectetur ea ipsum sequi quam facilis minima, fugit numquam. Alias, quo obcaecati sint mollitia voluptatem rem necessitatibus nihil delectus minima?
+          <img
+            className="img-fluid imgModal"
+            src={proyectoModal.imagen}
+            alt=""
+          />
+          {proyectoModal.descripcion}
           <hr />
           Tecnologias: {proyectoModal.tecnologias}
         </Modal.Body>
@@ -129,7 +139,12 @@ const Proyects = () => {
           <Button variant="primary" href={proyectoModal.github} target="_blank">
             <i className="bi bi-github"> Github</i>
           </Button>
-          <Button variant="dark" className="ms-2" href={proyectoModal.deploy} target="_blank">
+          <Button
+            variant="dark"
+            className="ms-2"
+            href={proyectoModal.deploy}
+            target="_blank"
+          >
             <i className="bi bi-rocket-takeoff"> Ver</i>
           </Button>
           <Button variant="secondary" onClick={handleClose}>

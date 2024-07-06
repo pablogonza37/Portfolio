@@ -25,11 +25,12 @@ const Menu = () => {
           )}
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="m-auto">
+          <Nav className="ms-auto">
             <Nav.Link href="#home" className='btnMenu text-white text-center'>Inicio</Nav.Link>
             <Nav.Link href="#link" className='btnMenu text-white text-center'>Contacto</Nav.Link>
             <Nav.Link href="#link" className='btnMenu text-white text-center'>Proyectos</Nav.Link>
-            <Nav.Link href="#link" className='btnMenu text-white text-center'>Sobre mi</Nav.Link>
+            <Nav.Link href="#link" className='btnMenu text-white text-center'>Certificaciones</Nav.Link>
+            <Nav.Link href="#link" className='btnMenu text-white text-center'>Habilidades</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

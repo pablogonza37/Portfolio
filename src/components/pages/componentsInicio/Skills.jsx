@@ -26,10 +26,10 @@ const Skills = () => {
   }, []);
 
   return (
-    <section className="habilidades py-3" data-aos="zoom-in">
+    <section className="habilidades py-3 pt-5" data-aos="zoom-in">
       <Container>
-        <h2 className="text-white display-3"><img className="imgTitulo img-fluid" src={IconoSkills} alt="" />
-          Habilidades
+        <h2 className="anton-sc-regular"><img className="imgTitulo img-fluid" src={IconoSkills} alt="" />
+          HABILIDADES
         </h2>
         <hr className="text-white" />
         <Row className="d-flex">
@@ -40,13 +40,14 @@ const Skills = () => {
             xs={6}
             className="d-flex justify-content-center"
           >
-            <div className="skill">
+            <div className="skill d-flex flex-column">
               <img
                 src={Html}
                 alt=""
                 className="w-100 "
               />
-            </div>      
+              <span className="ToolSkill">HTML</span>
+            </div>    
           </Col>
           <Col
             lg={2}
@@ -61,6 +62,7 @@ const Skills = () => {
                 alt=""
                 className="w-100"
               />
+              <span className="ToolSkill">CSS</span>
             </div>
           </Col>
           <Col
@@ -76,6 +78,7 @@ const Skills = () => {
                 alt=""
                 className="w-100"
               />
+              <span className="ToolSkill">JAVASCRIPT</span>
             </div>
           </Col>
           <Col
@@ -91,6 +94,7 @@ const Skills = () => {
                 alt=""
                 className="w-100"
               />
+              <span className="ToolSkill">BOOTSTRAP</span>
             </div>
           </Col>
                   
@@ -107,6 +111,7 @@ const Skills = () => {
                 alt=""
                 className="w-100"
               />
+              <span className="ToolSkill">REACT</span>
             </div>
           </Col>
           <Col
@@ -122,6 +127,7 @@ const Skills = () => {
                 alt=""
                 className="w-100"
               />
+              <span className="ToolSkill">NODE.JS</span>
             </div>
           </Col>
           <Col
@@ -137,6 +143,7 @@ const Skills = () => {
                 alt=""
                 className="w-100"
               />
+              <span className="ToolSkill">EXPRESS.JS</span>
             </div>
           </Col>
           <Col
@@ -151,7 +158,7 @@ const Skills = () => {
                 src={Mongo}
                 alt=""
                 className="w-100"
-              />
+              /><span className="ToolSkill">MONGODB</span>
             </div>
           </Col>
           <Col
@@ -167,6 +174,7 @@ const Skills = () => {
                 alt=""
                 className="w-100"
               />
+              <span className="ToolSkill">JAVA</span>
             </div>
           </Col>
           <Col
@@ -182,6 +190,7 @@ const Skills = () => {
                 alt=""
                 className="w-100"
               />
+              <span className="ToolSkill">C</span>
             </div>
           </Col>
           <Col
@@ -197,6 +206,7 @@ const Skills = () => {
                 alt=""
                 className="w-100"
               />
+              <span className="ToolSkill">C++</span>
             </div>
           </Col>
           <Col
@@ -212,6 +222,7 @@ const Skills = () => {
                 alt=""
                 className="w-100"
               />
+              <span className="ToolSkill">PYTHON</span>
             </div>
           </Col>
           <Col
@@ -227,6 +238,7 @@ const Skills = () => {
                 alt=""
                 className="w-100"
               />
+              <span className="ToolSkill">MYSQL</span>
             </div>
           </Col>
           <Col
@@ -242,6 +254,7 @@ const Skills = () => {
                 alt=""
                 className="w-100"
               />
+              <span className="ToolSkill">RUBY</span>
             </div>
           </Col>
           <Col
@@ -257,6 +270,7 @@ const Skills = () => {
                 alt=""
                 className="w-100"
               />
+              <span className="ToolSkill">GIT</span>
             </div>
           </Col>
           <Col
@@ -272,6 +286,7 @@ const Skills = () => {
                 alt=""
                 className="w-100"
               />
+              <span className="ToolSkill">GITHUB</span>
             </div>
           </Col>
         </Row>

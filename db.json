@@ -1,7 +1,7 @@
 {
   "proyectos": [
     {
-      "id": 1,
+      "id": "1",
       "titulo": "Bistro",
       "github": "https://github.com/pablogonza37/ProyectoFinalRollingCode",
       "deploy": "https://rolling-bistro.netlify.app/",
@@ -10,13 +10,42 @@
       "tipo": "fullstack"
     },
     {
-      "id": 2,
+      "id": "2",
       "titulo": "Lista de tareas",
       "github": "https://github.com/pablogonza37/ProyectoFinalRollingCode",
       "deploy": "https://rolling-bistro.netlify.app/",
       "imagen": "https://images.pexels.com/photos/5737454/pexels-photo-5737454.jpeg",
       "tecnologias": "Html, Css, JavaScript",
       "tipo": "frontend"
+    }
+  ],
+  "certificados": [
+    {
+      "titulo": "Desarrollador full stak",
+      "Institucion": "Rolling code",
+      "expedicion": "julio 2024",
+      "imagen": "https://certs.rollingcodeschool.com//cGFiLmdvbnphbGV6Mzc5OEBnbWFpbC5jb20=-1714682133518-1.png",
+      "id": "4b44"
+    }
+  ],
+  "consultas": [
+    {
+      "nombre": "pablo",
+      "Email": "pab.pg92@gmail.com",
+      "consulta": "jndkjcnskdjcn",
+      "id": "5ff9"
+    },
+    {
+      "id": "e37c",
+      "name": "julian",
+      "email": "jose@gmail.com",
+      "message": "bgfbgfbgbfgb"
+    },
+    {
+      "id": "91c1",
+      "name": "342sfsdfdsf",
+      "email": "mariela_gonzalez2006@hotmail.com",
+      "message": "ergergerg"
     }
   ]
 }

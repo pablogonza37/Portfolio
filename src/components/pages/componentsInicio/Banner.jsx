@@ -14,74 +14,91 @@ const Banner = () => {
   }, []);
 
   const handleDownloadCV = () => {
-    // Ruta al archivo PDF dentro de tu aplicación
-    const pdfPath = "/src/assets/currículum.pdf";  // Reemplaza con la ruta correcta
+    const pdfPath = "/src/assets/currículum.pdf";
 
-    // Lógica para descargar el archivo
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = pdfPath;
-    link.setAttribute('download', true);
+    link.setAttribute("download", true);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
   return (
-    <section className="banner pt-3">
+    <section className="banner pt-3 mt-5">
+      <h1 className="anton-sc-regular tiutuloPrincipal mt-3">
+        DESARROLLADOR FULLSTACK
+      </h1>
       <Container>
-        <Row>
-          <Col md={6} className="p-0 text-center mb-3">
-            <img src={Perfil} alt="" className="perfil" />
-            <div className="d-flex justify-content-center mt-3">
-              <div className="button-icon">
-                <div className="icon">
-                  <svg viewBox="0 0 24 24">
-                    <path
-                      d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z"
-                      fill="#222229"
-                    ></path>
-                  </svg>
-                </div>
-                <div className="cube">
-                  <span className="side front">Github</span>
-                  <span className="side top">
-                    <a
-                      href="https://github.com/pablogonza37"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white"
-                    >
-                      Ir a mi github
-                    </a>
-                  </span>
-                </div>
-              </div>
-            </div>
+        <Row className="mb-4">
+          <Col md={6}>
+            <p className="text-white playfair-display-p">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
+              porro neque dolor nisi! Voluptatibus exercitationem mollitia
+              quaerat similique itaque pariatur iste incidunt ratione,
+            </p>
           </Col>
-          <Col md={6} className="p-0 mb-3">
-            <div className="info px-4 py-2 m-auto">
-              <p className="text-white mb-1">Bienvenidos a mi portfolio</p>
-              <hr className="text-white my-1" />
+          <Col md={6}>
+            <p className="text-white playfair-display-p">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
+              porro neque dolor nisi! Voluptatibus exercitationem mollitia
+              quaerat similique itaque pariatur iste incidunt ratione,
+            </p>
+          </Col>
+        </Row>
 
-              <h1 className="display-4 text-white bold">
-                <span id="primerTexto">DESARROLLADOR <br /> FULL STACK</span>{" "}
-                
-              </h1>
-              <p className="text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reiciendis quis suscipit error vero explicabo debitis facilis
-                culpa magni architecto corporis unde rerum, consequatur
-                quibusdam? Minus, aperiam pariatur. Illo, inventore assumenda!
-              </p>
-
-              <div className="text-end me-3">
-                <button className="button" onClick={handleDownloadCV}>
-                  <span className="button_lg">
-                    <span className="button_sl"></span>
-                    <span className="button_text">Descargar CV</span>
-                  </span>
+        <Row>
+          <Col md={6} className="d-flex justify-content-center mb-5">
+            <img src={Perfil} alt="" className="perfil" />
+          </Col>
+          <Col md={6} className="d-flex flex-column m-auto ">
+            {" "}
+            <div className="d-flex justify-content-center">
+              <button class="buttonCv" type="button" onClick={handleDownloadCV}>
+                <span class="button__text">Descargar Cv</span>
+                <span class="button__icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 35 35"
+                    id="bdd05811-e15d-428c-bb53-8661459f9307"
+                    data-name="Layer 2"
+                    class="svg"
+                  >
+                    <path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path>
+                    <path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path>
+                    <path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path>
+                  </svg>
+                </span>
+              </button>
+            </div>
+            <div className="justify-content-center d-flex">
+              <a
+                href="https://github.com/pablogonza37"
+                target="_blank"
+                className="mt-4"
+              >
+                <button class="buttonGit">
+                  <svg
+                    fill="#ffffff"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                    <g
+                      stroke-linejoin="round"
+                      stroke-linecap="round"
+                      id="SVGRepo_tracerCarrier"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      {" "}
+                      <title>github</title>{" "}
+                      <rect fill="none" height="24" width="24"></rect>{" "}
+                      <path d="M12,2A10,10,0,0,0,8.84,21.5c.5.08.66-.23.66-.5V19.31C6.73,19.91,6.14,18,6.14,18A2.69,2.69,0,0,0,5,16.5c-.91-.62.07-.6.07-.6a2.1,2.1,0,0,1,1.53,1,2.15,2.15,0,0,0,2.91.83,2.16,2.16,0,0,1,.63-1.34C8,16.17,5.62,15.31,5.62,11.5a3.87,3.87,0,0,1,1-2.71,3.58,3.58,0,0,1,.1-2.64s.84-.27,2.75,1a9.63,9.63,0,0,1,5,0c1.91-1.29,2.75-1,2.75-1a3.58,3.58,0,0,1,.1,2.64,3.87,3.87,0,0,1,1,2.71c0,3.82-2.34,4.66-4.57,4.91a2.39,2.39,0,0,1,.69,1.85V21c0,.27.16.59.67.5A10,10,0,0,0,12,2Z"></path>{" "}
+                    </g>
+                  </svg>
+                  Visita mi Github
                 </button>
-              </div>
+              </a>
             </div>
           </Col>
         </Row>
