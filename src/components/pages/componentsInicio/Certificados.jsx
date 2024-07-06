@@ -50,18 +50,9 @@ const Certificados = () => {
         </h2>
         <hr className="text-white" />
         {spinnerCertificado ? (
-          
-<div class="banter-loader">
-  <div class="banter-loader__box"></div>
-  <div class="banter-loader__box"></div>
-  <div class="banter-loader__box"></div>
-  <div class="banter-loader__box"></div>
-  <div class="banter-loader__box"></div>
-  <div class="banter-loader__box"></div>
-  <div class="banter-loader__box"></div>
-  <div class="banter-loader__box"></div>
-  <div class="banter-loader__box"></div>
-</div>
+          <div className="my-4 text-center">
+            <Spinner animation="border" variant="light" />
+          </div>
         ) : (
           <Row className="mt-5">
             {certificados.map((certificado) => (

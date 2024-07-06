@@ -3,7 +3,7 @@ import { Col } from "react-bootstrap";
 
 const CardCertificado = ({ certificado, obtenerIdCertificado }) => {
   return (
-    <Col md={12} lg={6} className="d-flex mb-4">
+    <Col md={12} lg={6} className="d-flex mb-4 flex-column flex-lg-row flex-md-row">
       <a
         className="cardCert d-flex"
         style={{
@@ -22,7 +22,7 @@ const CardCertificado = ({ certificado, obtenerIdCertificado }) => {
           <span className="bottom-text">{certificado.titulo}</span>
         </div>
       </a>
-      <div className="mt-2 text-white ms-4">
+      <div className="mt-2 text-white textoCert">
         <h5>{certificado.titulo}</h5>
         <p>
           {certificado.institucion} <br /> {certificado.expedicion}

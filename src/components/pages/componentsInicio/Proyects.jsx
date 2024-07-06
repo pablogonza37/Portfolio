@@ -107,7 +107,7 @@ const Proyects = () => {
         </div>
         {spinnerInicio ? (
           <div className="my-4 text-center">
-            <Spinner animation="border" variant="ligth" />
+            <Spinner animation="border" variant="light" />
           </div>
         ) : (
           <Row className="mt-5">
