@@ -9,7 +9,6 @@
   font-style: normal;
 }
 .navbar {
-  position: fixed;
   width: 100%;
   z-index: 5;
 }
@@ -936,7 +935,11 @@ background: #fff;
 
 }
 
-
+@media (max-width: 767px) {
+  .anton-sc-regular{
+    font-size: 40px;
+  }
+}
 
 .social-card {
   height: fit-content;
@@ -948,12 +951,16 @@ background: #fff;
   background: rgb(255, 255, 255);
   padding: 20px 25px;
   border-radius: 14px;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 @media (max-width: 767px) {
   .social-card {
     flex-direction: row;
+    justify-content: space-around;
+  gap: 0px;
+  width: 100%;
+  margin: 0;
   }
 }
 
@@ -1023,28 +1030,29 @@ background: #fff;
 
 .Tooltip {
   position: absolute;
-  top: 8px;
-  left: calc(100% + 10px);
+  left: -15px;
+  top: calc(100% + 30px);
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   padding: 5px 10px;
   border-radius: 5px;
-  opacity: 0;
+  display: none;
   transition: opacity 0.3s;
   pointer-events: none;
   z-index: 3;
-  margin-left: 25px;
   box-shadow: 0 0 15px #ddd;
 }
 @media (max-width: 767px) {
   .Tooltip {
     display: none;
+    top:100%;
+    left: -50px;
   }
 }
 
 
 .Btn:hover .Tooltip {
-  opacity: 1;
+  display: block;
 }
 
 

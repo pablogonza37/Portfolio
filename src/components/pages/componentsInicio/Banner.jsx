@@ -25,7 +25,7 @@ const Banner = () => {
   };
 
   return (
-    <section className="banner pt-3 mt-5">
+    <section className="banner pt-3">
       <h1 className="anton-sc-regular tiutuloPrincipal mt-3">
         DESARROLLADOR FULLSTACK
       </h1>
@@ -33,16 +33,21 @@ const Banner = () => {
         <Row className="mb-4">
           <Col md={6}>
             <p className="text-white playfair-display-p">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-              porro neque dolor nisi! Voluptatibus exercitationem mollitia
-              quaerat similique itaque pariatur iste incidunt ratione,
+              ¡Hola! Soy Pablo, he trabajado en diversos proyectos donde he
+              aplicado mis habilidades en HTML, CSS, JavaScript y React para
+              diseñar y desarrollar interfaces atractivas y funcionales y
+              node.js, express y mongodb para la creacion de base de datos. Mi
+              enfoque meticuloso en la resolución de problemas y mi atención al
+              detalle me han permitido crear sitios web intuitivos y visualmente
+              atractivos.
             </p>
           </Col>
           <Col md={6}>
             <p className="text-white playfair-display-p">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-              porro neque dolor nisi! Voluptatibus exercitationem mollitia
-              quaerat similique itaque pariatur iste incidunt ratione,
+              Además de mis habilidades técnicas, poseo una sólida comprensión
+              de las últimas tendencias en diseño web y tecnologías frontend y backend, lo
+              que me permite mantenerme actualizado y adaptarme a los cambios
+              rápidos en la industria.
             </p>
           </Col>
         </Row>

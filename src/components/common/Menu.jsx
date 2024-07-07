@@ -3,7 +3,7 @@ import {Container, Nav, Navbar, NavDropdown} from 'react-bootstrap';
 
 
 const Menu = () => {
-  const [menuDesplegado, setMenuDesplegado] = useState(false); // Estado para controlar si el menú está desplegado
+  const [menuDesplegado, setMenuDesplegado] = useState(false); 
 
   const toggleMenu = () => {
     setMenuDesplegado(!menuDesplegado);
@@ -27,10 +27,10 @@ const Menu = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link href="#home" className='btnMenu text-white text-center'>Inicio</Nav.Link>
-            <Nav.Link href="#link" className='btnMenu text-white text-center'>Contacto</Nav.Link>
-            <Nav.Link href="#link" className='btnMenu text-white text-center'>Proyectos</Nav.Link>
-            <Nav.Link href="#link" className='btnMenu text-white text-center'>Certificaciones</Nav.Link>
-            <Nav.Link href="#link" className='btnMenu text-white text-center'>Habilidades</Nav.Link>
+            <Nav.Link href="#contact" className='btnMenu text-white text-center'>Contacto</Nav.Link>
+            <Nav.Link href="#proyectos" className='btnMenu text-white text-center'>Proyectos</Nav.Link>
+            <Nav.Link href="#cert" className='btnMenu text-white text-center'>Certificaciones</Nav.Link>
+            <Nav.Link href="#skills" className='btnMenu text-white text-center'>Habilidades</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

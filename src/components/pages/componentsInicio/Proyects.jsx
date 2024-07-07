@@ -63,7 +63,7 @@ const Proyects = () => {
     filtro === "Todos" ? proyectos : filtrarProyectos(filtro);
 
   return (
-    <section className="proyectos">
+    <section className="proyectos" id="proyectos">
       <Container>
         <h2
           className=" anton-sc-regular mt-3 tituloProyectos"
