@@ -9,8 +9,8 @@ const Menu = () => {
     setMenuDesplegado(!menuDesplegado);
   };
     return (
-        <>
-            <Navbar expand="lg" className="navbar text-white bg-black shadow">
+        <section id="main">
+            <Navbar expand="lg" className="navbar text-white bg-black shadow" >
       <Container >
         <Navbar.Brand href="#home" className='text-white'>Pablo Gonzalez</Navbar.Brand>
          <Navbar.Toggle
@@ -35,7 +35,7 @@ const Menu = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-        </>
+        </section>
     );
 };
 

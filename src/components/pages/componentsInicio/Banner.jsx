@@ -14,7 +14,7 @@ const Banner = () => {
   }, []);
 
   const handleDownloadCV = () => {
-    const pdfPath = "/src/assets/currículum.pdf";
+    const pdfPath = "/src/assets/Currículum.pdf";
 
     const link = document.createElement("a");
     link.href = pdfPath;
@@ -36,10 +36,7 @@ const Banner = () => {
               ¡Hola! Soy Pablo, he trabajado en diversos proyectos donde he
               aplicado mis habilidades en HTML, CSS, JavaScript y React para
               diseñar y desarrollar interfaces atractivas y funcionales y
-              node.js, express y mongodb para la creacion de base de datos. Mi
-              enfoque meticuloso en la resolución de problemas y mi atención al
-              detalle me han permitido crear sitios web intuitivos y visualmente
-              atractivos.
+              node.js, express y mongodb para la creacion de base de datos.
             </p>
           </Col>
           <Col md={6}>
@@ -59,15 +56,16 @@ const Banner = () => {
           <Col md={6} className="d-flex flex-column m-auto ">
             {" "}
             <div className="d-flex justify-content-center">
-              <button class="buttonCv" type="button" onClick={handleDownloadCV}>
-                <span class="button__text">Descargar Cv</span>
-                <span class="button__icon">
+              <a>
+              <button className="buttonCv" type="button" onClick={handleDownloadCV}>
+                <span className="button__text">Descargar Cv</span>
+                <span className="button__icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 35 35"
                     id="bdd05811-e15d-428c-bb53-8661459f9307"
                     data-name="Layer 2"
-                    class="svg"
+                    className="svg"
                   >
                     <path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path>
                     <path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path>
@@ -75,6 +73,7 @@ const Banner = () => {
                   </svg>
                 </span>
               </button>
+              </a>
             </div>
             <div className="justify-content-center d-flex">
               <a
@@ -82,7 +81,7 @@ const Banner = () => {
                 target="_blank"
                 className="mt-4"
               >
-                <button class="buttonGit">
+                <button className="buttonGit">
                   <svg
                     fill="#ffffff"
                     xmlns="http://www.w3.org/2000/svg"

@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
-import { Container, Row, Button, Modal, Spinner } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Container, Row, Button, Modal, Spinner, Badge } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Bistro from "../../../assets/bistro.png";
 import IconoProyecto from "../../../assets/proyecto.png";
 import {
   listarProyectosAPI,
@@ -14,16 +13,20 @@ const Proyects = () => {
   const [proyectos, setProyectos] = useState([]);
   const [spinnerInicio, setSpinnerInicio] = useState(true);
   const [show, setShow] = useState(false);
-  const [proyectoModal, setProyectoModal] = useState("");
+  const [proyectoModal, setProyectoModal] = useState({});
   const [filtro, setFiltro] = useState("Todos");
 
   const handleClose = () => setShow(false);
 
   const obtenerIdProyecto = async (id) => {
-    const respuesta = await obtenerProyectoAPI(id);
-    const proyectoEncontrado = await respuesta.json();
-    setProyectoModal(proyectoEncontrado);
-    setShow(true);
+    try {
+      const respuesta = await obtenerProyectoAPI(id);
+      const proyectoEncontrado = await respuesta.json();
+      setProyectoModal(proyectoEncontrado);
+      setShow(true);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -62,13 +65,14 @@ const Proyects = () => {
   const proyectosFiltrados =
     filtro === "Todos" ? proyectos : filtrarProyectos(filtro);
 
+  const tecnologiaModal = proyectoModal.tecnologias
+    ? proyectoModal.tecnologias.split(',')
+    : [];
+
   return (
     <section className="proyectos" id="proyectos">
       <Container>
-        <h2
-          className=" anton-sc-regular mt-3 tituloProyectos"
-          data-aos="zoom-in"
-        >
+        <h2 className="anton-sc-regular mt-3 tituloProyectos" data-aos="zoom-in">
           <img className="imgTitulo" src={IconoProyecto} alt="" />
           PROYECTOS
         </h2>
@@ -83,9 +87,7 @@ const Proyects = () => {
           </Button>
           <Button
             className={`btnFiltro ${filtro === "Full stack" ? "active" : ""}`}
-            style={
-              filtro === "Full stack" ? { backgroundColor: "#23c483" } : {}
-            }
+            style={filtro === "Full stack" ? { backgroundColor: "#23c483" } : {}}
             onClick={() => handleFiltroClick("Full stack")}
           >
             Full stack
@@ -116,7 +118,7 @@ const Proyects = () => {
                 key={proyecto._id}
                 proyecto={proyecto}
                 obtenerIdProyecto={obtenerIdProyecto}
-              ></CardProyecto>
+              />
             ))}
           </Row>
         )}
@@ -126,25 +128,21 @@ const Proyects = () => {
           <Modal.Title>{proyectoModal.nombreProyecto}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img
-            className="img-fluid imgModal"
-            src={proyectoModal.imagen}
-            alt=""
-          />
-          {proyectoModal.descripcion}
+          <img className="img-fluid imgModal" src={proyectoModal.imagen} alt="" />
+          <p>{proyectoModal.descripcion}</p>
           <hr />
-          Tecnologias: {proyectoModal.tecnologias}
+          <p>Tecnologias:</p>
+          <ul>
+            {tecnologiaModal.map((item, index) => (
+              <li key={index}><Badge>{item.trim()}</Badge></li>
+            ))}
+          </ul>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="primary" href={proyectoModal.github} target="_blank">
             <i className="bi bi-github"> Github</i>
           </Button>
-          <Button
-            variant="dark"
-            className="ms-2"
-            href={proyectoModal.deploy}
-            target="_blank"
-          >
+          <Button variant="dark" className="ms-2" href={proyectoModal.deploy} target="_blank">
             <i className="bi bi-rocket-takeoff"> Ver</i>
           </Button>
           <Button variant="secondary" onClick={handleClose}>
