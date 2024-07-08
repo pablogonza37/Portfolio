@@ -18,15 +18,16 @@ const Banner = () => {
 
     const link = document.createElement("a");
     link.href = pdfPath;
-    link.setAttribute("download", true);
+    link.setAttribute("download", "Currículum.pdf"); // Establecer el nombre del archivo a descargar
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  };
+};
+
 
   return (
     <section className="banner pt-3">
-      <h1 className="anton-sc-regular tiutuloPrincipal mt-3">
+      <h1 className="anton-sc-regular tituloPrincipal mt-3">
         DESARROLLADOR FULLSTACK
       </h1>
       <Container>
@@ -50,7 +51,7 @@ const Banner = () => {
         </Row>
 
         <Row>
-          <Col md={6} className="d-flex justify-content-center mb-5">
+          <Col md={6} className="d-flex justify-content-center mb-5 mb-lg-0">
             <img src={Perfil} alt="" className="perfil" />
           </Col>
           <Col md={6} className="d-flex flex-column m-auto ">
@@ -75,13 +76,13 @@ const Banner = () => {
               </button>
               </a>
             </div>
-            <div className="justify-content-center d-flex">
+            <div className="d-flex justify-content-center">
               <a
                 href="https://github.com/pablogonza37"
                 target="_blank"
-                className="mt-4"
+                className="mt-4 link-underline-dark"
               >
-                <button className="buttonGit">
+                <button className="buttonGit ">
                   <svg
                     fill="#ffffff"
                     xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +101,7 @@ const Banner = () => {
                       <path d="M12,2A10,10,0,0,0,8.84,21.5c.5.08.66-.23.66-.5V19.31C6.73,19.91,6.14,18,6.14,18A2.69,2.69,0,0,0,5,16.5c-.91-.62.07-.6.07-.6a2.1,2.1,0,0,1,1.53,1,2.15,2.15,0,0,0,2.91.83,2.16,2.16,0,0,1,.63-1.34C8,16.17,5.62,15.31,5.62,11.5a3.87,3.87,0,0,1,1-2.71,3.58,3.58,0,0,1,.1-2.64s.84-.27,2.75,1a9.63,9.63,0,0,1,5,0c1.91-1.29,2.75-1,2.75-1a3.58,3.58,0,0,1,.1,2.64,3.87,3.87,0,0,1,1,2.71c0,3.82-2.34,4.66-4.57,4.91a2.39,2.39,0,0,1,.69,1.85V21c0,.27.16.59.67.5A10,10,0,0,0,12,2Z"></path>{" "}
                     </g>
                   </svg>
-                  Visita mi Github
+                 <span className="m-auto">Explora mi Github</span>
                 </button>
               </a>
             </div>

@@ -70,7 +70,7 @@ const Contact = () => {
     <section className="contacto pt-5" id="contact">
       <Container>
       
-        <h2 className="anton-sc-regular mt-3" data-aos="zoom-in">
+        <h2 className="tituloSeccion mt-3" data-aos="zoom-in">
         <img src={IconoContacto} className="imgTitulo" alt="" />
           CONTACTO
         </h2>

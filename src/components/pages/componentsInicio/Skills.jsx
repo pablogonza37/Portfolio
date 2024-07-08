@@ -28,7 +28,7 @@ const Skills = () => {
   return (
     <section className="habilidades py-3 pt-5" data-aos="zoom-in" id="skills">
       <Container>
-        <h2 className="anton-sc-regular"><img className="imgTitulo img-fluid" src={IconoSkills} alt="" />
+        <h2 className="tituloSeccion"><img className="imgTitulo img-fluid" src={IconoSkills} alt="" />
           HABILIDADES
         </h2>
         <hr className="text-white" />

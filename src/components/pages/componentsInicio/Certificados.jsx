@@ -44,7 +44,7 @@ const Certificados = () => {
   return (
     <section className="certificados py-3 pt-5" id="cert">
       <Container>
-    <h2 className="anton-sc-regular " data-aos="zoom-in">
+        <h2 className="tituloSeccion" data-aos="zoom-in">
           <img src={IconoCert} className="imgTitulo" alt="" />
           CERFICACIONES
         </h2>

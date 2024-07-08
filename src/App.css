@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
+
 .playfair-display-p {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
@@ -32,10 +33,13 @@
 .button__icon,
 .button__text {
   transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
 }
 
 .buttonCv .button__text {
-  transform: translateX(100px);
+  transform: translateX(70px);
   color: #fff;
   font-weight: 600;
 }
@@ -102,6 +106,9 @@
   box-shadow: 0 0 15px #ddd;
   width: 300px;
   height: 60px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
 }
 
 .buttonGit svg {
@@ -112,7 +119,8 @@
   box-shadow: none;
 }
 
-.anton-sc-regular {
+
+.tituloSeccion {
   font-family: "Anton SC", sans-serif;
   font-weight: 400;
   font-size: 60px;
@@ -120,24 +128,24 @@
   color: #e7e7e7;
 }
 
-.tiutuloPrincipal {
-  font-size: 120px;
+.anton-sc-regular {
+  font-family: "Anton SC", sans-serif;
+  font-weight: 400;
+  font-size: 130px;
+  font-style: normal;
+  color: #e7e7e7;
   text-align: center;
 }
 
-@media all and (min-width: 768px) and (max-width: 991px) {
-  .tiutuloPrincipal {
-    font-size: 90px;
-    text-align: center;
+@media (max-width: 767px) {
+  .anton-sc-regular {
+    font-size: 55px;
+  }
+  .tituloSeccion{
+    font-size: 45px;
   }
 }
 
-@media (max-width: 767px) {
-  .tiutuloPrincipal {
-    font-size: 50px;
-    text-align: center;
-  }
-}
 
 #root {
   width: 100%;
@@ -381,7 +389,7 @@
 
 .skill {
   width: 100px;
-  height: 100px;
+  height: auto;
   background: #212121;
   box-shadow: rgba(0, 0, 0, 0.4) 10px 20px 30px,
     rgba(0, 0, 0, 0.3) 10px 1px 53px 3px, rgba(1, 0, 0, 0.2) 0px -1px 3px inset;
@@ -409,7 +417,7 @@
 }
 
 .ToolSkill {
-  margin-top: 10px; /* Ajusta el margen superior */
+  margin-top: 10px;
 }
 
 .ToolSkill {
@@ -423,15 +431,15 @@
   font-size: 0.8rem;
   white-space: nowrap;
   z-index: 1;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  visibility: visible;
+  opacity: 1;
+  
 }
-
+/*
 .skill:hover .ToolSkill {
   visibility: visible;
   opacity: 1;
-}
+}*/
 
 /* menu */
 
@@ -825,11 +833,70 @@
   background-position: center;
   position: relative;
   place-content: center;
-  border-radius: 10px;
   overflow: hidden;
   transition: all 0.5s ease-in-out;
   cursor: pointer;
+  box-shadow: 0 0 8px #ddd;
 }
+
+.btnCertificado{
+  appearance: none;
+ background-color: #FAFBFC;
+ border: 1px solid rgba(27, 31, 35, 0.15);
+ border-radius: 6px;
+ box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+ box-sizing: border-box;
+ color: #24292E;
+ cursor: pointer;
+ display: inline-block;
+ font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+ font-size: 14px;
+ font-weight: 500;
+ line-height: 20px;
+ list-style: none;
+ padding: 3px 5px;
+ position: relative;
+ transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+ user-select: none;
+ -webkit-user-select: none;
+ touch-action: manipulation;
+ vertical-align: middle;
+ white-space: nowrap;
+ word-wrap: break-word;
+}
+
+.textoCert p{
+  margin-bottom: 2px;
+}
+
+.textoCert h5{
+  margin-bottom: 3px;
+}
+
+.btnCertificado:hover{
+  background-color: #F3F4F6;
+ text-decoration: none;
+ transition-duration: 0.1s;
+
+}
+
+.btnCertificado:active{
+  background-color: #EDEFF2;
+ box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+ transition: none 0s;
+}
+
+.btnCertificado:focus {
+  outline: 1px transparent;
+ }
+ 
+ .btnCertificado:before {
+  display: none;
+ }
+ 
+ .btnCertificado:-webkit-details-marker {
+  display: none;
+ }
 
 @media (max-width: 767px) {
   .cardCert {
@@ -946,11 +1013,7 @@
   margin: 0 10px 10px 0;
 }
 
-@media (max-width: 767px) {
-  .anton-sc-regular {
-    font-size: 40px;
-  }
-}
+
 
 .social-card {
   height: fit-content;
@@ -1068,7 +1131,7 @@
 .flechaArriba {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 7px;
   color: white;
   cursor: pointer;
 }
@@ -1076,4 +1139,8 @@
 .irArriba {
   width: 50px;
   height: 50px;
+  
+  border-radius: 50%;
 }
+
+

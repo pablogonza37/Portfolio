@@ -72,7 +72,7 @@ const Proyects = () => {
   return (
     <section className="proyectos" id="proyectos">
       <Container>
-        <h2 className="anton-sc-regular mt-3 tituloProyectos" data-aos="zoom-in">
+        <h2 className="mt-3 tituloSeccion" data-aos="zoom-in">
           <img className="imgTitulo" src={IconoProyecto} alt="" />
           PROYECTOS
         </h2>
