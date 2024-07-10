@@ -14,11 +14,11 @@ const Banner = () => {
   }, []);
 
   const handleDownloadCV = () => {
-    const pdfPath = "/src/assets/Currículum.pdf";
+    const pdfPath = "../public/Currículum.pdf";
 
     const link = document.createElement("a");
     link.href = pdfPath;
-    link.setAttribute("download", "Currículum.pdf"); // Establecer el nombre del archivo a descargar
+    link.setAttribute("download", "CvPabloGonzalez.pdf"); 
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
