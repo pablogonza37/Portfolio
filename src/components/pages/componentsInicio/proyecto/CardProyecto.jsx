@@ -31,6 +31,7 @@ const CardProyecto = ({ proyecto, obtenerIdProyecto }) => {
                   className="ms-2"
                   href={proyecto.deploy}
                   target="_blank"
+                  hidden={proyecto.tipo === "backend"}
                 >
                   <i className="bi bi-rocket-takeoff"></i>
                 </Button>

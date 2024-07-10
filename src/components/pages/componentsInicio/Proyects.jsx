@@ -69,6 +69,12 @@ const Proyects = () => {
     ? proyectoModal.tecnologias.split(',')
     : [];
 
+    const imagenesModal = proyectoModal.imagenesMuestra
+    ? proyectoModal.imagenesMuestra.split(',')
+    : [];
+    
+
+
   return (
     <section className="proyectos" id="proyectos">
       <Container>
@@ -123,13 +129,19 @@ const Proyects = () => {
           </Row>
         )}
       </Container>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} size="lg">
         <Modal.Header closeButton>
           <Modal.Title>{proyectoModal.nombreProyecto}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <img className="img-fluid imgModal" src={proyectoModal.imagen} alt="" />
-          <p>{proyectoModal.descripcion}</p>
+          
+            {imagenesModal.map((item, index) => (
+              
+              <img key={index} src={item.trim()} className="img-fluid imgModal mt-2" alt="" />
+            ))}
+          
+          <p className="mt-2">{proyectoModal.descripcion}</p>
           <hr />
           <p>Tecnologias:</p>
           <ul>
