@@ -110,7 +110,7 @@ const Contact = () => {
                   </button>
                 </a>
                 <a
-                  href="www.linkedin.com/in/pablo-gonzalez-3a9176310"
+                  href="https://www.linkedin.com/in/pablo-gaston-gonzalez"
                   target="_blank"
                 >
                   <button className="Btn linkdin">
