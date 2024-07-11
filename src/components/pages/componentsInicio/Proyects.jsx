@@ -146,16 +146,16 @@ const Proyects = () => {
           <p>Tecnologias:</p>
           <ul>
             {tecnologiaModal.map((item, index) => (
-              <li key={index}><Badge>{item.trim()}</Badge></li>
+              <li key={index}><Badge bg="info">{item.trim()}</Badge></li>
             ))}
           </ul>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" href={proyectoModal.github} target="_blank">
+          <Button variant="dark" href={proyectoModal.github} target="_blank">
             <i className="bi bi-github"> Github</i>
           </Button>
-          <Button variant="dark" className="ms-2" href={proyectoModal.deploy} target="_blank">
-            <i className="bi bi-rocket-takeoff"> Ver</i>
+          <Button variant="primary" className="ms-2" href={proyectoModal.deploy} target="_blank">
+            <i className="bi bi-rocket-takeoff"> Lanzar</i>
           </Button>
           <Button variant="secondary" onClick={handleClose}>
             Cerrar

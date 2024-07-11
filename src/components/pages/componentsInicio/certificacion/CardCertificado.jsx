@@ -18,8 +18,8 @@ const CardCertificado = ({ certificado, obtenerIdCertificado }) => {
       <div className="text-white textoCert w-75">
         <h5>{certificado.titulo}</h5>
         <p>
-          <i class="bi bi-mortarboard"></i> {certificado.institucion} <br />{" "}
-          <i class="bi bi-calendar-event"></i> {certificado.expedicion}
+          <i className="bi bi-mortarboard"></i> {certificado.institucion} <br />{" "}
+          <i className="bi bi-calendar-event"></i> {certificado.expedicion}
         </p>
 
         <button
@@ -28,7 +28,7 @@ const CardCertificado = ({ certificado, obtenerIdCertificado }) => {
             obtenerIdCertificado(certificado._id);
           }}
         >
-          Credencial <i class="bi bi-box-arrow-up-right"></i>
+          Credencial <i className="bi bi-box-arrow-up-right"></i>
         </button>
       </div>
     </Col>

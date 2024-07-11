@@ -20,20 +20,20 @@ const CardProyecto = ({ proyecto, obtenerIdProyecto }) => {
               <div className="menuProyecto d-flex justify-content-center">
                 
                 <Button
-                  variant="primary"
+                  variant="dark"
                   href={proyecto.github}
                   target="_blank"
                 >
-                  <i className="bi bi-github"></i>
+                  <i className="bi bi-github"> Github</i>
                 </Button>
                 <Button
-                  variant="dark"
+                  variant="primary"
                   className="ms-2"
                   href={proyecto.deploy}
                   target="_blank"
                   hidden={proyecto.tipo === "backend"}
                 >
-                  <i className="bi bi-rocket-takeoff"></i>
+                  <i className="bi bi-rocket-takeoff"> Lanzar</i>
                 </Button>
                 <Button
                   variant="success"
@@ -42,7 +42,7 @@ const CardProyecto = ({ proyecto, obtenerIdProyecto }) => {
                     obtenerIdProyecto(proyecto._id);
                   }}
                 >
-                  <i className="bi bi-info-circle"></i>
+                  <i className="bi bi-info-circle"> Info</i>
                 </Button>
               </div>
             </div>
