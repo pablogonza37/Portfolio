@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Button, Modal, Spinner, Badge } from "react-bootstrap";
+import { Container, Row, Button, Modal, Spinner, Badge, Pagination } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import IconoProyecto from "../../../assets/proyecto.png";
@@ -15,6 +15,10 @@ const Proyects = () => {
   const [show, setShow] = useState(false);
   const [proyectoModal, setProyectoModal] = useState({});
   const [filtro, setFiltro] = useState("Todos");
+  
+ 
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6; 
 
   const handleClose = () => setShow(false);
 
@@ -60,20 +64,30 @@ const Proyects = () => {
 
   const handleFiltroClick = (tipo) => {
     setFiltro(tipo);
+    setCurrentPage(1); 
   };
 
   const proyectosFiltrados =
     filtro === "Todos" ? proyectos : filtrarProyectos(filtro);
 
+
+  const indexOfLastProject = currentPage * itemsPerPage;
+  const indexOfFirstProject = indexOfLastProject - itemsPerPage;
+  const currentProjects = proyectosFiltrados.slice(indexOfFirstProject, indexOfLastProject);
+
+  const totalPages = Math.ceil(proyectosFiltrados.length / itemsPerPage);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
   const tecnologiaModal = proyectoModal.tecnologias
     ? proyectoModal.tecnologias.split(',')
     : [];
 
-    const imagenesModal = proyectoModal.imagenesMuestra
+  const imagenesModal = proyectoModal.imagenesMuestra
     ? proyectoModal.imagenesMuestra.split(',')
     : [];
-    
-
 
   return (
     <section className="proyectos" id="proyectos">
@@ -118,15 +132,31 @@ const Proyects = () => {
             <Spinner animation="border" variant="light" />
           </div>
         ) : (
-          <Row className="mt-5">
-            {proyectosFiltrados.map((proyecto) => (
-              <CardProyecto
-                key={proyecto._id}
-                proyecto={proyecto}
-                obtenerIdProyecto={obtenerIdProyecto}
-              />
-            ))}
-          </Row>
+          <>
+            <Row className="mt-5">
+              {currentProjects.map((proyecto) => (
+                <CardProyecto
+                  key={proyecto._id}
+                  proyecto={proyecto}
+                  obtenerIdProyecto={obtenerIdProyecto}
+                />
+              ))}
+            </Row>
+            {totalPages > 1 && ( 
+              <Pagination className="mt-4 justify-content-center" style={{ backgroundColor: 'black' }}>
+                {Array.from({ length: totalPages }, (_, index) => (
+                  <Pagination.Item
+                    key={index + 1}
+                    active={index + 1 === currentPage}
+                    onClick={() => handlePageChange(index + 1)}
+                    style={{ color: currentPage === index + 1 ? 'white' : 'gray' }} 
+                  >
+                    {index + 1}
+                  </Pagination.Item>
+                ))}
+              </Pagination>
+            )}
+          </>
         )}
       </Container>
       <Modal show={show} onHide={handleClose} size="lg">
@@ -135,12 +165,9 @@ const Proyects = () => {
         </Modal.Header>
         <Modal.Body>
           <img className="img-fluid imgModal" src={proyectoModal.imagen} alt="" />
-          
-            {imagenesModal.map((item, index) => (
-              
-              <img key={index} src={item.trim()} className="img-fluid imgModal mt-2" alt="" />
-            ))}
-          
+          {imagenesModal.map((item, index) => (
+            <img key={index} src={item.trim()} className="img-fluid imgModal mt-2" alt="" />
+          ))}
           <p className="mt-2">{proyectoModal.descripcion}</p>
           <hr />
           <p>Tecnologias:</p>
