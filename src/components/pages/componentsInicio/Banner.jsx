@@ -40,7 +40,7 @@ const Banner = () => {
 
         <Row>
           <Col md={6} className="d-flex justify-content-center mb-5 mb-lg-0">
-            <img src={Perfil} alt="" className="perfil" />
+            <img src="https://res.cloudinary.com/dpgb6ec2s/image/upload/v1728438996/20240622_044215_2_izx5av.jpg" alt="" className="perfil" />
           </Col>
           <Col md={6} className="d-flex flex-column m-auto ">
             {" "}
