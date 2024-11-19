@@ -40,13 +40,13 @@ const Banner = () => {
 
         <Row>
           <Col md={6} className="d-flex justify-content-center mb-5 mb-lg-0">
-            <img src="https://res.cloudinary.com/dpgb6ec2s/image/upload/v1728438996/20240622_044215_2_izx5av.jpg" alt="" className="perfil" />
+            <img src="https://res.cloudinary.com/dpgb6ec2s/image/upload/v1728437002/fotoPablo_4_ldednv.jpg" alt="" className="perfil" />
           </Col>
           <Col md={6} className="d-flex flex-column m-auto ">
             {" "}
             <div className="d-flex justify-content-center">
               <a
-                href="https://drive.google.com/file/d/1WdGDM165gzKFkBUFAVqED71AJ8jsAxUp/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1SSF4O0DjHTIXjPOc7f2KDKt41LHK2bof/view?usp=drive_link"
                 target="_blank"
                 className="mt-4 link-underline-warning"
               >
