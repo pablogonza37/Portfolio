@@ -77,7 +77,7 @@ const Contact = () => {
         <Row className="d-flex justify-content-center my-5">
           <Col md={6} className="d-flex flex-column" data-aos="zoom-in">
             <p className="text-white">
-              Si tines alguna consulta, comentario o sugerencia, puedes
+              Si tenes alguna consulta, comentario o sugerencia, puedes
               contactarme y me comunicare lo antes posible.
             </p>
             <div className="d-flex justify-content-center mt-4 mb-5">
