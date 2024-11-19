@@ -46,7 +46,7 @@ const Banner = () => {
             {" "}
             <div className="d-flex justify-content-center">
               <a
-                href="https://drive.google.com/file/d/1WdGDM165gzKFkBUFAVqED71AJ8jsAxUp/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1SSF4O0DjHTIXjPOc7f2KDKt41LHK2bof/view?usp=drive_link"
                 target="_blank"
                 className="mt-4 link-underline-warning"
               >
